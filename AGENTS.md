@@ -23,9 +23,22 @@ This repository contains a simple Node.js backend located in the `backend/` dire
 
 - `backend/index.js` – Main entry and mounts routes.
 - `backend/routes/` – Express routers (contains `health.js`).
-- `backend/models/` – Placeholder for Mongoose models.
+- `backend/models/User.js` – Mongoose User model with hashed passwords.
 
 All API routes should be prefixed with `/api`.
+
+## Authentication
+
+- Passwords are hashed using `bcrypt` before storage.
+- JWT is used for stateless authentication. Include `Authorization: Bearer <token>` header on protected endpoints.
+- A default admin account is seeded on first run if no admins exist. Credentials come from `ADMIN_EMAIL` and `ADMIN_PASSWORD` environment variables.
+
+### Environment variables
+
+- `MONGO_URL` – MongoDB connection string (defaults to `mongodb://localhost:27017/yourdbname`).
+- `JWT_SECRET` – secret used to sign JWT tokens.
+- `ADMIN_EMAIL` and `ADMIN_PASSWORD` – credentials for the initial admin user.
+
 
 # Frontend Development Instructions
 
