@@ -19,6 +19,13 @@ This repository contains a simple Node.js backend located in the `backend/` dire
 
 `/api/health` returns `{"status":"OK"}` to verify the server is up.
 
+### Authentication Endpoints
+
+- `POST /api/auth/login` – Body: `{ "email": "...", "password": "..." }`. On success returns `{ "token": "<jwt>" }`. Include this token in the `Authorization: Bearer <token>` header when calling protected endpoints.
+- `GET /api/secret` – example protected route that requires a valid JWT and returns secret data.
+
+Only an admin user exists by default. Set `ADMIN_EMAIL` and `ADMIN_PASSWORD` in `.env` to configure the credentials seeded on first run.
+
 ## Project Structure
 
 - `backend/index.js` – Main entry and mounts routes.
