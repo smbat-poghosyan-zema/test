@@ -77,3 +77,19 @@ An `AuthContext` provides `login` and `logout` helpers and exposes an
 The frontend communicates with the backend via REST API requests to `http://localhost:5000/api/*`. CORS is enabled on the backend (allowing `http://localhost:3000`) so the React app can make requests during development.
 
 The frontend and backend are separate projects and communicate only via HTTP.
+
+## Data Models
+
+### Post
+
+The `backend/models/Post.js` file defines the Post schema used for blog
+entries. Fields:
+
+- `title` (String, required) – title of the post.
+- `content` (String, required) – the main body text.
+- `author` (String) – optional name of the author.
+- `published` (Boolean, default `false`) – whether the post is visible.
+- `createdAt` and `updatedAt` timestamps are managed automatically.
+
+Currently the `author` is stored as a simple string, but it could later be
+expanded to reference a `User` document.
