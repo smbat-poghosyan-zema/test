@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 const User = require('./models/User');
+const Post = require('./models/Post');
 
 const app = express();
 const port = process.env.PORT || 5000;
