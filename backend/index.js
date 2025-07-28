@@ -13,6 +13,8 @@ app.use(cors({ origin: 'http://localhost:3000' }));
 app.use(express.json());
 
 app.use('/api', require('./routes/health'));
+app.use('/api', require('./routes/auth'));
+app.use('/api', require('./routes/secret'));
 
 async function startServer() {
   try {

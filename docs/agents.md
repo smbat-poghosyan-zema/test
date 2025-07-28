@@ -39,7 +39,13 @@ Both projects must have dependencies installed (`npm install`) in their respecti
 - Mongoose models go in `backend/models/`.
 - React components and pages are under `frontend/src/`, using React Router for navigation.
 - All API responses are JSON.
-- JWT-based authentication will be introduced later.
+- JWT-based authentication is now implemented.
+
+## API Endpoints
+
+- `GET /api/health` – returns `{ "status": "OK" }`.
+- `POST /api/auth/login` – accepts `email` and `password`; returns `{ token }` on success. Include `Authorization: Bearer <token>` when calling protected routes.
+- `GET /api/secret` – example protected endpoint that responds with secret data when authenticated.
 
 # Keeping This Document Updated
 
