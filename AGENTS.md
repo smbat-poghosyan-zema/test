@@ -61,6 +61,12 @@ The app uses **React Router**. Main routes:
 
 Components for these pages live under `frontend/src/pages`.
 
+The `LoginPage` allows the admin to authenticate. It posts credentials to
+`/api/auth/login` and stores the returned JWT in `localStorage` as `authToken`.
+An `AuthContext` provides `login` and `logout` helpers and exposes an
+`isAuthenticated` flag. After successful login the user is redirected to
+`/admin`.
+
 The frontend communicates with the backend via REST API requests to `http://localhost:5000/api/*`. CORS is enabled on the backend (allowing `http://localhost:3000`) so the React app can make requests during development.
 
 The frontend and backend are separate projects and communicate only via HTTP.

@@ -39,7 +39,9 @@ Both projects must have dependencies installed (`npm install`) in their respecti
 - Mongoose models go in `backend/models/`.
 - React components and pages are under `frontend/src/`, using React Router for navigation.
 - All API responses are JSON.
-- JWT-based authentication will be introduced later.
+- JWT-based authentication is used. The frontend obtains a token via the `/login` page and saves it in `localStorage` under `authToken`.
+- The React app exposes an `AuthContext` that stores the token and provides `login` and `logout` helpers to components.
+- After a successful login the user is redirected to the `/admin` dashboard.
 
 # Keeping This Document Updated
 
